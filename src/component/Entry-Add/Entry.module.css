@@ -1,0 +1,87 @@
+.container {
+ color: #4f7df9;
+}
+
+.box {
+    min-width: 300px;
+    background: #fafafa;
+    border-radius: 38px;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  .box::before {
+    content: "";
+    height: 110%;
+    width: 110%;
+    left: -5%;
+    top: -5%;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 166px -31px rgba(0, 0, 0, 0.15);
+    border-radius: 60px;
+    z-index: -1;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 30px 0;
+  }
+
+  .boxInput {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+  .content {
+    padding: 0 50px;
+  }
+  .input {
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 28px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+  .input label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .input input {
+    border: none;
+    border-bottom: 1px solid blue;
+    outline: none;
+    width: 20%;
+    font-size: 40px;
+    padding: 0px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.908);
+  }
+
+  .button {
+    color: white;
+  }
+  button{
+    font-family: "Nunito", sans-serif;
+    color: #fff;
+    background: #4f7df9;
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 12px 0;
+    width: 100%;
+    outline: none;
+    border: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #0044ff;
+  }
+
+  .error {
+    font-size: 0.85rem;
+    margin-top: 3px;
+    margin-left: 0.85rem;
+    color: #c33737;
+  }

@@ -1,8 +1,7 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
-import ProgreStats from '../component/Proges-app/ProgreStats'
 import StatsApp from '../component/Stats-App/StatsApp'
-
+import ProgreStats from '../component/Proges-app/ProgreStats'
 function Homepage() {
   return (
     <Routes>
