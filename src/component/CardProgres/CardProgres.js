@@ -1,15 +1,35 @@
 import React from 'react'
-import { Progress } from 'antd';
+import moment from 'moment';
+import { Card, Badge } from 'antd'
+const { Meta } = Card
 
 
 function CardProgres({ room }) {
 
+  const getDate = (date) => {
+    return moment(date).format('DD/MM/YYYY');
+  };
+
   return (
-    <div>
-      <h1>CardProgres</h1>
-    <Progress type="dashboard" percent={75} />
-    <Progress type="dashboard" percent={75} gapDegree={30} />
+
+    <div style={{ width: "400px", margin: "1rem", display : "flex" }}>
+      <Badge>
+        <Card>
+          <p>Date : {getDate(room.Dateofday)}</p>
+          <p>AGE : {room.age}</p>
+          <p>Genre : {room.gender}</p>
+          <p>Taille: {room.height}cm</p>
+          <p>Poids : {room.weight}kg</p>
+          <p>Votre total Calorie est : {room.totalCalories}</p>
+          <p>Votre BMI est : {room.bmi}</p>
+        </Card>
+      </Badge>
+
     </div>
+
+
+
+
   )
 }
 

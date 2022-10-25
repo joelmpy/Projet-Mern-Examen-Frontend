@@ -31,9 +31,9 @@ const HCLayout = ({children}) => {
           </Menu>
   
           <Content style={contentStyle} children={children}></Content>
-          <Footer style={{textAlign : "center"}}>
+          {/* <Footer style={{textAlign : "center"}}>
               Créé par Joel 2022
-          </Footer>
+          </Footer> */}
       </Layout>
     )
   }

@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
+import CardProgres from '../CardProgres/CardProgres'
 
 function StatsApp() {
 
@@ -19,7 +21,10 @@ function StatsApp() {
       StatsApp
       {
         rooms.map((rooms) => (
-          <h2 key={rooms._id}>bmi : {rooms.bmi}</h2>
+          <Link key={rooms._id} to={rooms._id}>
+            <CardProgres room={rooms}/>
+          </Link>
+          
         ))
       }
     </div>
