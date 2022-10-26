@@ -35,11 +35,16 @@
     padding: 0 50px;
   }
   .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #fff;
     box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
     border-radius: 28px;
     padding: 20px 0;
     margin-bottom: 20px;
+    
   }
   .input label {
     display: block;
@@ -53,8 +58,7 @@
     border: none;
     border-bottom: 1px solid blue;
     outline: none;
-    width: 20%;
-    font-size: 40px;
+    font-size: 30px;
     padding: 0px;
     box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.908);
   }
@@ -79,9 +83,108 @@
     background: #0044ff;
   }
 
+  /* gender */
+
+  .wrapperGender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapperIcon {
+    margin: 2rem;
+}
+
+.assets {
+  width: 5rem;
+}
+
+.active {
+  background-color: #190c8d !important;
+}
+
+.wrapperIcon .btn {
+  background-color: gray;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100px;
+  height: 2em;
+}
+
+  /* error */
+
   .error {
     font-size: 0.85rem;
     margin-top: 3px;
     margin-left: 0.85rem;
     color: #c33737;
   }
+
+/* Activity container*/
+
+.wrapperActivity {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60em;
+  background: #fafafa;
+  border-radius: 38px;
+  text-align: center;
+  margin-bottom: 70px;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.908);
+}
+
+.boxActif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  margin: 20px;
+
+}
+
+.itemsActif{
+  display: flex;
+  background-color: orange;
+}
+
+.itemsActivity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.itemsActivity p {
+  color: hsl(200 18% 26%);
+  line-height: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.itemsActivity .btn {
+  background-color: gray;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 150px;
+  padding: 12px;
+  margin: 20px;
+}
+
+.active-btn {
+  background-color: #190c8d !important;
+}
