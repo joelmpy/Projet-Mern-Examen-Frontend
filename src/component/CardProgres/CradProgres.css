@@ -1,0 +1,42 @@
+
+  .products-area-wrapper {
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 0 4px;
+    background-color: var(--app-bg);
+  }
+  
+  .tableView .products-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 4px;
+    background-color: var(--app-content-secondary-color);
+    padding: 8px 16px;
+    color: var(--app-content-main-color);    
+}
+
+.tableView .products-row {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    justify-content: space-between;
+  }
+  .tableView .products-row:hover {
+    box-shadow: var(--filter-shadow);
+    background-color: var(--app-content-secondary-color);
+  }
+
+  .tableView .product-cell {
+    flex: 1;
+    padding: 8px 16px;
+    color: var(--app-content-main-color);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

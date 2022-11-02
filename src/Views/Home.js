@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "../App.css"
 function Home() {
   return (
-    <div>Premiere page Home</div>
+    <div >Premiere page Home</div>
   )
 }
 

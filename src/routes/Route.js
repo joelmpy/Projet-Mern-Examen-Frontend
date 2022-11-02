@@ -6,6 +6,7 @@ import Layout from '../component/Layout/Layout'
 import Contact from '../component/Contact/Contact'
 import Entry from '../component/Entry-Add/Entry'
 import ErrorPage from '../component/ErrorPage'
+import "../App.css"
 
 
 
@@ -19,8 +20,7 @@ function Routeur() {
                 <Route path="/Ajouter" element={<Entry />}></Route>
                 <Route path="Contact" element={<Contact />}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
-            </Routes>
-          
+            </Routes>         
         </div>
     )
 }

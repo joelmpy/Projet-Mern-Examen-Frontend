@@ -16,11 +16,18 @@ function StatsApp() {
     }
     fetchData()
   }, [])
+
   return (
-    <div>
-      StatsApp
-      {
-        rooms.map((rooms) => (
+          <div class="products-area-wrapper tableView">
+
+      <div class="products-header">
+        <div class="product-cell image">Date</div>
+        <div class="product-cell category">Gender</div>
+        <div class="product-cell status-cell">Age</div>
+        <div class="product-cell sales">Height</div>
+        <div class="product-cell stock">Weight</div>
+      </div>
+      {rooms.map((rooms) => (
           <Link key={rooms._id} to={rooms._id}>
             <CardProgres room={rooms}/>
           </Link>

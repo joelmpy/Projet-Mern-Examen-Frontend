@@ -1,41 +1,41 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import { Layout, Menu } from 'antd'
-const { Header, Content, Footer } = Layout
+import { Link } from 'react-router-dom'
+import "./Navbar.css"
+import img from "../../assets/MPY.png"
+import btnImg from "../../assets/menu-btn.png"
+import imgUser from "../../assets/img-bd.avif"
+import {useContext} from 'react'
+import {User} from '../../App'
 
-const contentStyle = {
-    display : 'flex',
-    flexWrap : 'wrap',
-    padding : "3rem 3rem",
-    justifyContent : "space-between",
-    backgroundColor : 'beige'
+const HCLayout = () => {
+    const context = useContext(User)
+    return (
+            <nav className="navBar">
+                <div className="logo">
+                    <img src={img} />
+                </div>
+                <div className="nav-links">
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to='/Progres'>Progression</Link></li>
+                        <li><Link to='/Contact'>Contact</Link></li>
+                        <li><Link to='/Ajouter'>Ajouter</Link></li>
+                    </ul>
+                </div>
+                <img src={btnImg} className="menu-hamburger" />
+
+
+            <div className="account-info">
+                <div className="account-info-picture">
+                    <img src={imgUser}></img>
+                </div>
+                <div className="account-info-name">{context.user.firstname} {context.user.surname}</div>
+            </div>
+
+            </nav>
+
+
+    )
 }
 
-const HCLayout = ({children}) => {
-    return (
-      <Layout>
-          <Header>Header</Header>
-          <Menu theme='dark' mode='horizontal'>
-              <Menu.Item>
-                  <Link to='/'>Home</Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                  <Link to='/Progres'>Progression</Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                  <Link to='/Ajouter'>Ajouter uen nouvelle stats</Link>
-              </Menu.Item>
-              <Menu.Item key="3">
-                  <Link to='/Contact'>Contact</Link>
-              </Menu.Item>
-          </Menu>
-  
-          <Content style={contentStyle} children={children}></Content>
-          {/* <Footer style={{textAlign : "center"}}>
-              Créé par Joel 2022
-          </Footer> */}
-      </Layout>
-    )
-  }
-  
-  export default HCLayout
+export default HCLayout

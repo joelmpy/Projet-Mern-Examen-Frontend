@@ -1,0 +1,141 @@
+
+/********** Logo de la page ******************/
+
+.logo img {
+  width: 150px;
+  height: 80px;
+}
+
+/********** Nav-Bar ******************/
+.navBar {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--sidebar);
+}
+
+.navBar a {
+  color: white;
+}
+
+
+/********** Nav-Bar Menu ******************/
+.navBar .nav-links ul {
+  display: flex;
+}
+
+
+.nav-links ul li {
+  margin: 0 25px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  background-color: chocolate;
+}
+
+.navBar .nav-links ul li.active a {
+  color: red;
+  font-weight: 600;
+}
+
+.navBar .menu-hamburger {
+  width: 35px;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width : 700px) {
+  /* .navBar {
+    padding: 12px 20px;
+  }
+
+  .navBar .logo {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+  }
+
+  .navBar .menu-hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0, 20);
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100%;
+    transition: all 0.5s ease;
+  }
+
+  .nav-links.mobile-menu {
+    margin-left: 0;
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navBar .nav-links ul li {
+    margin: 25px 0px;
+    font-size: 1.2rem;
+  } */
+
+}
+
+
+/* User info */
+
+.account-info {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  margin-top: auto;
+}
+.account-info-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.account-info-picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.account-info-name {
+  font-size: 14px;
+  color: var(--sidebar-main-color);
+  margin: 0 8px;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-info-more {
+  color: var(--sidebar-main-color);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+}
