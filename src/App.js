@@ -1,20 +1,27 @@
 import './App.css';
 import Routeur from './routes/Route';
 import {createContext} from 'react'
+import {useState} from 'react'
 
 export const User = createContext()
+// export const UserContext = createContext();
+// export const UserContext = React.createContext(false)
+
 function App() {
+
+  const [isLogged, setLogged] = useState(false)
+  const [user, setUser] =useState({})
+
+  const setAuth = (state, user) => {
+    setLogged(state)
+    setUser(user)
+  }
+
   const changeContext = {
-    user:{
-      firstname:"Jean",
-      surname:"Pierre",
-      age:18,
-      aboueMe:"Je suis fan de sport",
-      email:"jeanpierre@gmail.com",
-      activity:2,
-      height:183,
-      gender:'homme'
-    }
+    user: user,
+    Log: isLogged,
+    setAuth: setAuth
+
   }
   return (
     <>

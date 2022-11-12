@@ -2,8 +2,10 @@ import React from 'react'
 import "./CardForm.css"
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router'
-import {useContext} from 'react'
-import {User} from '../../App'
+import { useContext } from 'react'
+import {Link} from 'react-router-dom'
+import { User } from '../../App'
+import Bmi from "../Bmi-info/Bmi"
 
 
 function CardForm({ id, room, setRoom, refresh }) {
@@ -19,41 +21,41 @@ function CardForm({ id, room, setRoom, refresh }) {
     }, [room, id])
 
     const onFinsih = (values) => {
-        console.log(values)
-        const info ={
-            weight,
-            height:context.user.height,
-            gender:context.user.gender,
-            age:context.user.age,
-            activity:context.user.activity
+        console.log(room)
+        const info = {
+            weight: weight,
+            height: room.height,
+            gender: room.gender,
+            age: room.age,
+            activity: room.activity,
         }
         console.log(info)
         fetch(`http://localhost:8009/info/${id}`, {
-            headers : {
-                "Content-type" : "application/json",
-            }, 
+            headers: {
+                "Content-type": "application/json",
+            },
             method: 'PATCH',
-            body : JSON.stringify(info)
+            body: JSON.stringify(info)
         })
-        .then((res) => {
-            if(res.ok) {
-                console.log('HTTP REQUEST SUCCES')
-                refresh()
-            } else {
-                console.log('Http request UNSUCCES')
-            }
-            return res
-        })
+            .then((res) => {
+                if (res.ok) {
+                    console.log('HTTP REQUEST SUCCES')
+                    refresh()
+                } else {
+                    console.log('Http request UNSUCCES')
+                }
+                return res
+            })
         // .then((res) => res.json())
         // .then((data) => setRoom(values))
         // .catch((error) => console.log(error))
     }
 
     const handleDelte = () => {
-       fetch(`http://localhost:8009/info/${id}`, {
-            method: 'DELETE', 
+        fetch(`http://localhost:8009/info/${id}`, {
+            method: 'DELETE',
         }).then((res) => {
-            if(res.ok) {
+            if (res.ok) {
                 console.log('HTTP REQUEST SUCCES')
             } else {
                 console.log('Http request UNSUCCES')
@@ -72,7 +74,7 @@ function CardForm({ id, room, setRoom, refresh }) {
         setWeight(e.target.value)
     }
 
- 
+
 
 
 
@@ -80,52 +82,55 @@ function CardForm({ id, room, setRoom, refresh }) {
 
     return (
         <>
-            <div className="container">
-           
+            <div className="container-form">
 
-                    <div className="card">
-                        <div className="card__image">
+                <div className="container_cards">
+                    <div className="card_form">
+                        <div className="grid-container">
+                            <div className="card_title">
+                                <p>{room.totalCalories}</p>
+                            </div>
+                            <p className="card_name">Total Calories</p>
+                           <Link to="/BMI"><button className="btn-draw-border">EN SAVOIR PLUS</button></Link>
+                        </div>
+                    </div>
+
+
+                    <div className="card_form">
+                        <div className="grid-container">
+                            <div className="card_title">
+                                <p>{room.bmi}</p>
+                            </div>
+                            <p className="card_name">BMI</p>
+                            <Link to={`/BMI/${room.bmi}`}><button className="btn-draw-border">EN SAVOIR PLUS</button></Link> 
+                        </div>
+                    </div>
+
+                    <div className="card_form">
+                        <div className="grid-container">
+                            <div className="card_title">
+                                <p>{room.idealWeight}</p>
+                            </div>
+                            <p className="card_name">Poids Idéal</p>
+                            <button className="btn-draw-border">EN SAVOIR PLUS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card_form_change">
+                    <div className="grid-container-weight">
+                        <div className="card_title">
                             <p>{room.weight}</p>
                         </div>
-                        <p className="card__name">Poids</p>
-                        <div className="grid-container"></div>
-                        <button className="btn draw-border">EN SAVOIR PLUS</button>
-                        <input type="number" onChange={handleWeight} name="name"  />
+                        <p className="card_name">Pour modifier ton Poids : </p>
+                        <input type="number" onChange={handleWeight} name="name" className='input-change' />
                     </div>
-
-                    <div className="card">
-                        <div className="card__image">
-                            <p>{room.totalCalories}</p>
-                        </div>
-                        <p className="card__name">Total Calories</p>
-                        <div className="grid-container"></div>
-                        <button className="btn draw-border">EN SAVOIR PLUS</button>
-                    </div>
-
-
-                    <div className="card">
-                        <div className="card__image">
-                            <p>{room.bmi}</p>
-                        </div>
-                        <p className="card__name">BMI</p>
-                        <div className="grid-container"></div>
-                        <button className="btn draw-border">EN SAVOIR PLUS</button>
-                    </div>
-
-                    <div className="card">
-                        <div className="card__image">
-                            <p>{room.idealWeight}</p>
-                        </div>
-                        <p className="card__name">Poids Idéal</p>
-                        <div className="grid-container"></div>
-                        <button className="btn draw-border">EN SAVOIR PLUS</button>
-                    </div>
-
-            
-                <div className='button'>
-                <button type="submit" onClick={onFinsih} className='btn-change'>Submit</button>
-                <button className="btn-change" onClick={handleDelte}>Supprimer</button>
                 </div>
+                <div className='button_save'>
+                    <button className="btn-change" style={{ backgroundColor: "red" }} onClick={handleDelte}>Supprimer</button>
+                    <button type="submit" style={{ backgroundColor: "blue" }} onClick={onFinsih} className='btn-change'>Submit</button>
+                </div>
+
 
             </div>
 

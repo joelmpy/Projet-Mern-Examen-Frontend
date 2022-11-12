@@ -1,9 +1,17 @@
+/********** Mise en page ******************/
 
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+  list-style: none;
+}
 /********** Logo de la page ******************/
 
 .logo img {
   width: 150px;
-  height: 80px;
+  height: 70px;
 }
 
 /********** Nav-Bar ******************/
@@ -13,46 +21,80 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--sidebar);
-}
-
-.navBar a {
-  color: white;
+  height: 10vh;
 }
 
 
 /********** Nav-Bar Menu ******************/
-.navBar .nav-links ul {
-  display: flex;
+.nav-links {
+  display: flex;  
+  gap: 20px;  
+  padding-right: 20px; 
 }
 
 
-.nav-links ul li {
-  margin: 0 25px;
-  list-style: none;
-}
-
-.nav-links li a {
+.nav-links li {
+  color: var(--sidebar-main-color);
   text-decoration: none;
   font-weight: 600;
-}
-
-.nav-links li a:hover {
-  background-color: chocolate;
-}
-
-.navBar .nav-links ul li.active a {
-  color: red;
-  font-weight: 600;
-}
-
-.navBar .menu-hamburger {
-  width: 35px;
-  position: absolute;
-  right: 50px;
-  top: 50px;
-  display: none;
+  font-size: 1em;  
   cursor: pointer;
+  margin: 0 25px;
+  padding: 0 10px;
+  border-left: 1px var(--sidebar-main-color) solid;
 }
+
+.mobile-menu-icon {
+  border: none;
+  background: none;
+  font-size: 20px;
+  display: none;
+}
+
+@media (max-width : 768px){
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    left: 0;
+    top: 0px;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background-color: var(--sidebar);
+  }
+  ul li {
+    padding: 25px 0px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    color: var(--sidebar-main-color);
+    font-weight: 600;
+    font-size: 1em;  
+    cursor: pointer;
+  }
+
+  ul li:hover {
+    background-color: var(--sidebar-hover-link);
+    border-bottom: 1px var(--sidebar-main-color) solid;
+  }
+  .mobile-menu-icon {
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
+
+
+
 
 @media screen and (max-width : 700px) {
   /* .navBar {

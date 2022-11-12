@@ -2,16 +2,21 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import CardProgres from '../CardProgres/CardProgres'
+import {useContext} from 'react'
+import {User} from '../../App'
 
 function StatsApp() {
 
   const [rooms, setRooms] = useState([])
+  const context = useContext(User)
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch('http://localhost:8009/info')
+      const data = await fetch(`http://localhost:8009/infos/${context.user._id}`)
+      console.log(data)
       const json = await data.json()
       console.log(json)
+    
       setRooms(json)
     }
     fetchData()

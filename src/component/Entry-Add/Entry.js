@@ -3,8 +3,9 @@ import styles from "../Entry-Add/Entry.module.css";
 import { useForm } from "react-hook-form";
 import Man from "../../assets/homme.png";
 import Woman from "../../assets/femme.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-dom";
+import {User} from '../../App'
 
 function Entry() {
   const {
@@ -13,13 +14,13 @@ function Entry() {
     formState: { errors },
   } = useForm();
 
-  const [activity, setActivity] = useState(0);
+  const [activity, setActivity] = useState(1);
   const [values, setValues] = useState(null);
   const [formValid, setFormValid] = useState(false);
   const [gender, setGender] = useState("homme");
   const [user, setUsers] = useState([]);
   // const navigate = useNavigate()
-
+  const context = useContext(User)
   const onSubmit = (data, event) => {
     event.preventDefault();
     console.log(data, event)
@@ -35,6 +36,7 @@ function Entry() {
              age:parseInt(data.age),
              weight:parseInt(data.weight),
              height:parseInt(data.height),
+             _id:context.user._id
            })
          })
          .then(reponse => reponse.json())
@@ -245,8 +247,9 @@ function Entry() {
           </div>
         </div>
 
-        <div className={styles.button}>
-          <button type="submit">Envoyer</button>
+        <div className={styles.buttonEntry}>
+          {/* <button className="button-valid" type="submit">Envoyer</button> */}
+          <input type="submit"/>
         </div>
       </form>
     </div>

@@ -1,0 +1,86 @@
+.main-contact {
+    background-color: hsl(210 11% 15%);
+  }
+  
+  .container-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h4 {
+    font-family: "Source Sans Pro", sans-serif;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .git-right .fa-github {
+    font-size: 40px;
+    color: white;
+  }
+  
+  .git-left .fa-github {
+    font-size: 40px;
+    color: white;
+  }
+  
+  .git-bloc {
+    text-align: center;
+    margin: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .resaux {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resaux .btn-resaux {
+    font-size: 35px;
+    margin: 10px;
+    width: 5%;
+    text-align: center;
+  }
+  
+  .text-end {
+      background-color: hsl(0 0% 0% / 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-top: 10px;
+  }
+  .text-end span {
+      text-align: center;
+      font-size: 1.2em;
+      color: white;
+  }
+  
+  @media  screen and (max-width : 690px) {
+    .container-footer{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .h4 {
+      margin-bottom: 10px;
+    }
+    .git-right .fa-github {
+      font-size: 30px;
+    }
+    
+    .git-left .fa-github {
+      font-size: 30px;
+    }
+    .git-bloc {
+      margin: 9px;
+      margin-bottom: 25px;
+    }
+    .resaux .btn-resaux {
+      font-size: 20px;
+      margin: 10px;
+      width: 10%;
+    }
+  
+  }

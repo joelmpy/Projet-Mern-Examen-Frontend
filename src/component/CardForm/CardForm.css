@@ -1,68 +1,104 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 50px;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-  font-family: 'Baloo Paaji 2', cursive;
-}
+/* .container-form {
+  height: 110vh;
+} */
 
-.card {
-  background-color: #222831;
-  height: 27rem;
-  border-radius: 5px;
+
+
+.container_cards {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.7);
-  color: white;
+  margin: 30px;
 }
 
-.card__name {
-  margin-top: 15px;
-  font-size: 1.3em;
+.card_form {
+  overflow: hidden;
+  width: 400px;
+  height: 250px;
+  background:#F5F5F5;;
+  box-shadow: 5px 5px 15px rgba(#BA7E7E);
+  border-radius: 10px;
 }
-
-.card__image {
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
-  border: 5px solid #272133;
-  margin-top: 20px;
-  box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
-}
-
-.card__image p  {
-  text-align: center;
-  margin-top: 3em;
-}
-
-
-.btn {
-  background: none;
-  border: 1px solid white;
-  cursor: pointer;
-  line-height: 1;
-  padding: 0.75em 1em;
-  letter-spacing: 0.05rem;
-  margin: 1em;
-  width: 10rem;
-}
-
-.btn:focus {
-  outline: 2px dotted #55d7dc;
-}
-
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-change {
-  width: 100%;
+.card_title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.card_name {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.btn-draw-border {
+  margin-top: 50px;
+  width: 170px;
+  height: 35px;
+  background: #FFDD00;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  color: black;
+}
+
+.card_form_change {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+  background:#F5F5F5;;
+  box-shadow: 5px 5px 15px rgba(#BA7E7E);
+  border-radius: 10px;
+}
+
+.grid-container-weight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-change {
+  margin-top: 10px;
+  border: none;
+  width: 50%;
+  height: 62px;
+  background: #fff;
+  border-radius: 31px;
+  padding: 0 35px;
+}
+
+.button_save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.button_save .btn-change {
+  width: 150px;
+  height: 35px;
+  background: #FFDD00;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 30px;
+  color: white;
 }
