@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router'
 import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { User } from '../../App'
-import Bmi from "../Bmi-info/Bmi"
 
 
 function CardForm({ id, room, setRoom, refresh }) {
@@ -14,14 +13,16 @@ function CardForm({ id, room, setRoom, refresh }) {
     const [values, setValues] = useState(null)
     const [weight, setWeight] = useState()
 
+
     const navigate = useNavigate()
 
     useEffect(() => {
         setValues(room)
     }, [room, id])
 
+
+
     const onFinsih = (values) => {
-        console.log(room)
         const info = {
             weight: weight,
             height: room.height,
@@ -29,7 +30,6 @@ function CardForm({ id, room, setRoom, refresh }) {
             age: room.age,
             activity: room.activity,
         }
-        console.log(info)
         fetch(`http://localhost:8009/info/${id}`, {
             headers: {
                 "Content-type": "application/json",
@@ -46,6 +46,7 @@ function CardForm({ id, room, setRoom, refresh }) {
                 }
                 return res
             })
+        
         // .then((res) => res.json())
         // .then((data) => setRoom(values))
         // .catch((error) => console.log(error))
@@ -75,15 +76,9 @@ function CardForm({ id, room, setRoom, refresh }) {
     }
 
 
-
-
-
-
-
     return (
         <>
             <div className="container-form">
-
                 <div className="container_cards">
                     <div className="card_form">
                         <div className="grid-container">

@@ -15,7 +15,7 @@
   overflow: hidden;
   width: 400px;
   height: 250px;
-  background:#F5F5F5;;
+  background:#F5F5F5;
   box-shadow: 5px 5px 15px rgba(#BA7E7E);
   border-radius: 10px;
 }
@@ -61,7 +61,7 @@
   overflow: hidden;
   width: 300px;
   height: 200px;
-  background:#F5F5F5;;
+  background:#F5F5F5;
   box-shadow: 5px 5px 15px rgba(#BA7E7E);
   border-radius: 10px;
 }

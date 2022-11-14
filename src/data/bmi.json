@@ -1,6 +1,6 @@
 [
     {
-        "title" : "Resultat de ton BMI ?", 
+        "title" : "Resultat de ton BMI", 
         "origine_bmi" : "L’IMC permet de déterminer de manière objective la corpulence d’une personne. C’est au mathématicien et statisticien Adolphe Quetelet (1796-1874) que l’on doit cet indice. Toutefois, le terme « Indice de Masse Corporelle » n’apparaît qu’en 1972 (1), soit bien après la création de ce qui se dénommait à l’origine « Indice de Quetelet ». Depuis 1997, l’OMS utilise cet indice afin d’établir une classification standard de référence en matière de surcharge pondérale, qui puisse être utilisée de manière internationale. Cette classification (voir tableau ci-dessus) a pour rôle d’évaluer les risques liés au surpoids. Le fait de calculer de manière régulière son IMC présente donc un intérêt : repérer ses propres évolutions de poids et les interpréter en accord avec les informations fournies par l’OMS.",
         "calcul_bmi" : "Le calcul de l’IMC est relativement simple puisqu’il ne nécessite que deux critères: votre taille (en cm) et votre poids (en kg). La formule mathématique exacte est la suivante :",
         "calculs_bmi" : "Attention toutefois, cette formule de l’IMC n’est valable que pour les adultes âgés de 18 à 65 ans. Ainsi, les enfants, les adolescents, les personnes âgées, mais également les femmes enceintes ou les personnes très musclées, doivent s’orienter vers des formules différentes (2). Concernant les enfants, vous pouvez consulter notre page dédiée au calcul de l’IMC chez l’enfant.",
