@@ -102,3 +102,70 @@
   margin: 30px;
   color: white;
 }
+
+@media (max-width : 600px){
+  .container-form {
+    background-color: #BA7E7E;
+    height: auto;
+  }
+  .container_cards {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+  }
+  .card_form {
+    margin-top: 2em;
+    width: 300px;
+    height: 170px;
+    background:#F5F5F5;
+    box-shadow: 5px 5px 15px rgba(#e5e1e1);
+    border-radius: 15px;
+  }
+  .card_title {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.card_name {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn-draw-border {
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.input-change {
+  margin-top: 10px;
+  width: 50%;
+  height: 40px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 0 15px;
+}
+
+.button_save {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+}
+.btn-change {
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+}

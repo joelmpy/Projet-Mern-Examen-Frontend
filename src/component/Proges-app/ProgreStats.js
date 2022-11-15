@@ -24,7 +24,7 @@ function ProgreStats() {
     <div>
       {/* <h1>ProgresStats</h1>
       <CardProgres room={room}/> */}
-      <h2>Editer info deja valider</h2>
+      <h2 style={{textAlign : "center", marginTop : "10px"}}>Editer info deja valider</h2>
       
       <CardForm id={id} room={room} setRoom={setRoom} refresh={fetchData}/>
     </div>

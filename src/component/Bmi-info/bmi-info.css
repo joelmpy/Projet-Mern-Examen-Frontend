@@ -3,7 +3,7 @@
     margin-right: auto;
     padding: 15px;
     max-width: 1200px;
-    height: 100vh;
+    height: 165vh;
     background:#F5F5F5;
 }
 
@@ -44,6 +44,14 @@
     margin-left: 5px;
     text-decoration-line: underline;
     cursor: pointer;
+}
+
+.section-history {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    max-width: 900px;
 }
 
 .container-bmi {
@@ -103,8 +111,91 @@
 
 .img-container {
     text-align: center;
+    margin-top: 20px;
   }
   
   .img-container img {
     height: 200px;
+  }
+
+  .img-container p {
+    margin-top: 5px;
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  .img-container .text_imc {
+    margin-top: 10px;
+    border: 2px solid black;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  @media (max-width : 600px){
+    .container-imc {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        height: auto;
+        background:#F5F5F5;
+    }
+    .title-imc {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .section-imc {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 10px 20px;
+    }
+    .icon-btn {
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    .icon p {
+        margin-left: 5px;
+        text-decoration-line: underline;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    .section-history p {
+        margin-top: 10px;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    .container-bmi {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 15px 20px;
+        max-width: 300px;
+    }
+    .text_imc {
+        margin-top: 10px;
+        border: 2px solid black;
+        font-size: 0.8em;
+        padding: 10px;
+      }
+
+      .title-bmi {
+        font-size: 20px;
+      }
+
+      .section-info-result p {
+        font-size: 0.8em;
+      }
+      .bmi-items{
+        color: black;
+        font-weight: 700;
+        font-size: 0.9em;  
+        margin: 12px 20px;
+        padding: 0 10px;
+    }
+    
+    
   }
