@@ -62,121 +62,100 @@ function Entry() {
             <div className="form-date">
               <label htmlFor="date">Date</label>
               <input type="date" id="date" name="date" className="form-date-input"
-                required {...register("date", {required: true})}onChange={handleChange}/>
-               <span className="date-error">{errors.date?.type === "required" && "La date est requise"}</span>
+                required {...register("date", { required: true })} onChange={handleChange} />
+              <span className="date-error">{errors.date?.type === "required" && "La date est requise"}</span>
             </div>
           </div>
 
 
-           {/* Le genre */}
+          {/* Le genre */}
           <div className="container-gender">
-        
+
             <div className="section-title-gender">
               <h2>Gender</h2>
             </div>
 
-              <div className="section-gender">
-                <div className="gender-male-img">
-                  <img src={Man} className="male-img"></img>
-                  <button className={"gender-btn" + (gender === "homme" ? " active " : "")} onClick={() => {setGender("homme")}} >Un Homme</button>
-                </div>
-
-                <div className="gender-woman-img">
-                  <img src={Woman} className="male-img"></img>
-                  <button className={"gender-btn" + (gender === "femme" ? " active " : "")}onClick={() => { setGender("femme")}}>Une Femme</button>
-                </div>
+            <div className="section-gender">
+              <div className="gender-male-img">
+                <img src={Man} className="male-img"></img>
+                <button className={"gender-btn" + (gender === "homme" ? " active " : "")} onClick={() => { setGender("homme") }} >Un Homme</button>
               </div>
-    
+
+              <div className="gender-woman-img">
+                <img src={Woman} className="male-img"></img>
+                <button className={"gender-btn" + (gender === "femme" ? " active " : "")} onClick={() => { setGender("femme") }}>Une Femme</button>
+              </div>
+            </div>
+
           </div>
 
 
-             {/* Les input pour les information */}
+          {/* Les input pour les information */}
 
-      <div className="container-info-user">
+          <div className="container-info-user">
 
-          <div className="input-champs">
-            <div className="input-champs-info">
-              <label>Height(cm)</label>
-              <input type="number" id="number"name="height" required 
-              {...register("height", {required: true, max: 250,})} onChange={handleChange}/>
-            <span className="error">{errors.height?.type === "required" && ("La taille est requis")}</span>
+            <div className="section-title-gender">
+              <h2>Info</h2>
+            </div>
+
+            <div className="input-champs">
+              <div className="input-champs-info">
+                <h3>Height(cm)</h3>
+                <input type="number" id="number" name="height" placeholder="ta taille (cm)" required className="input-info"
+                  {...register("height", { required: true, max: 250, })} onChange={handleChange} />
+                <span className="error">{errors.height?.type === "required" && ("La taille est requis")}</span>
+              </div>
+            </div>
+
+            <div className="input-champs">
+              <div className="input-champs-info">
+                <h3>Weight(kg)</h3>
+                <input type="number" id="number" name="weight" placeholder="kg min : 30" required className="input-info"
+                  {...register("weight", { required: true, min: 30, max: 300 })} onChange={handleChange} />
+                {errors.weight?.type === "required" && (<span className="error">Le poids est requis</span>)}
+              </div>
+            </div>
+
+            <div className="input-champs">
+              <div className="input-champs-info">
+                <h3>Age</h3>
+                <input type="number" id="number" name="age" placeholder="min : 15ans" required className="input-info"
+                  {...register("age", { required: true, min: 15, max: 70 })} onChange={handleChange} />
+                {errors.age?.type === "required" && (<span className="error">L'age est requis</span>)}
+              </div>
             </div>
           </div>
-
-          <div className="input-champs">
-            <div className="input-champs-info">
-              <label>Weight(kg)</label>
-              <input type="number" id="number" name="weight" required {...register("weight", {required: true, min: 30, max: 300 })}onChange={handleChange}/>
-              {errors.weight?.type === "required" && (<span className="error">Le poids est requis</span>)}
-            </div>
-          </div>
-
-          <div className="input-champs">
-            <div className="input-champs-info">
-              <label>Age</label>
-              <input type="number" id="number" name="age"placeholder="min : 15ans"
-                {...register("age", {required: true, min: 15, max: 70})}
-                onChange={handleChange}
-              />
-              {errors.age?.type === "required" && (
-                <span className="error">L'age est requis</span>
-              )}
-            </div>
-          </div>
-
-          </div>
-
-
-
-
-
         </div>
 
 
 
 
-        <div className={""}>
-          <div className={"styles.boxActif"}>
+        <div className="container-activity">
+
+          <div className="section-title-activity">
             <h2>Votre activité</h2>
+          </div>
 
-            <div className={"styles.itemsActif"}>
-              <div className={"styles.itemsActivity"}>
-                <div className={"btn" + (activity === "1" ? " active-btn " : "")}onClick={() => { setActivity("1");}}>{" "} Peu actif
-                </div>
-              </div>
+          <div className="section-activity">
 
-              <div className={"styles.itemsActivity"}>
-                <div
-                  className={"btn" + (activity === "2" ? " active-btn " : "")}
-                  onClick={() => {
-                    setActivity("2");
-                  }}
-                >
-                  Moyennement actif
-                </div>
-              </div>
-
-              <div className={"styles.itemsActivity"}>
-                <div className={"btn" + (activity === "3" ? " active-btn " : "")} onClick={() => {setActivity("3");}}> Actif</div>
-              </div>
-
-              <div className={"styles.itemsActivity"}>
-                <div className={"btn" + (activity === "4" ? " active-btn " : "")}
-                  onClick={() => {
-                    setActivity("4");
-                  }}
-                >
-                  Très actif
-                </div>
-                <p>
-                  Activité très physique <span>(par ex : ouvrier)</span>
-                </p>
-              </div>
+            <div className="btn-activity">
+              <button className={"btn-actif" + (activity === "1" ? " active-btn " : "")} onClick={() => { setActivity("1"); }}>{" "} Peu actif</button>
             </div>
+
+            <div className="btn-activity">
+              <button className={"btn-actif" + (activity === "2" ? " active-btn " : "")} onClick={() => { setActivity("2") }}>Moyennement actif</button>
+            </div>
+
+            <div className="btn-activity">
+              <button className={"btn-actif" + (activity === "3" ? " active-btn " : "")} onClick={() => { setActivity("3"); }}> Actif</button>
+            </div>
+
+            <div className="btn-activity">
+              <button className={"btn-actif" + (activity === "4" ? " active-btn " : "")} onClick={() => { setActivity("4"); }}> Très actif </button>
+            </div>
+
           </div>
         </div>
-
-
 
 
 
@@ -184,8 +163,6 @@ function Entry() {
           {/* <button className="button-valid" type="submit">Envoyer</button> */}
           <input type="submit" />
         </div>
-
-
 
       </form>
 
