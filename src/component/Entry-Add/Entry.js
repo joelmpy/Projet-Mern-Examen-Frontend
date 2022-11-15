@@ -1,206 +1,151 @@
 import React from "react";
-import styles from "../Entry-Add/Entry.module.css";
 import { useForm } from "react-hook-form";
 import Man from "../../assets/homme.png";
 import Woman from "../../assets/femme.png";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-dom";
-import {User} from '../../App'
+import { User } from "../../App";
+import "../Entry-Add/Entry.css"
 
 function Entry() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
+  const { register, handleSubmit, formState: { errors } } = useForm()
   const [activity, setActivity] = useState(1);
+  const [gender, setGender] = useState("homme");
   const [values, setValues] = useState(null);
   const [formValid, setFormValid] = useState(false);
-  const [gender, setGender] = useState("homme");
   const [user, setUsers] = useState([]);
   // const navigate = useNavigate()
-  const context = useContext(User)
+  const context = useContext(User);
   const onSubmit = (data, event) => {
     event.preventDefault();
-    console.log(data, event)
-    fetch('http://localhost:8009/info', {
-         headers: {
-             Accept: 'application/json',
-             'Content-Type': 'application/json'
-           },
-           method: 'POST',
-           body: JSON.stringify({
-             gender : gender, 
-             activity : activity,
-             age:parseInt(data.age),
-             weight:parseInt(data.weight),
-             height:parseInt(data.height),
-             _id:context.user._id
-           })
-         })
-         .then(reponse => reponse.json())
-         .then(res => {
-          console.log('Success:',res)
-      
-          setUsers(res) 
-         }
-         ) 
-        
+    console.log(data, event);
+    fetch("http://localhost:8009/info", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        gender: gender,
+        activity: activity,
+        age: parseInt(data.age),
+        weight: parseInt(data.weight),
+        height: parseInt(data.height),
+        _id: context.user._id,
+      }),
+    })
+      .then((reponse) => reponse.json())
+      .then((res) => {
+        console.log("Success:", res);
+
+        setUsers(res);
+      });
   };
 
   const handleChange = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
-  console.log(gender);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.box}>
+    <div className="container-entry">
+
+      <div className="box-title">
         <h1>Entrer des nouvelles données personnelles</h1>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="form-horizontal">
-        <div className={styles.boxInput}>
-          <div className={styles.content}>
-            <div className={styles.input}>
+      <form onSubmit={handleSubmit(onSubmit)} className="container-entry-input">
+        {/* La date */}
+        <div className="container-form">
+
+          <div className="container-date">
+            <div className="form-date">
               <label htmlFor="date">Date</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                required
-                {...register("date", {
-                  required: true,
-                })}
-                onChange={handleChange}
-              />
-              {errors.date?.type === "required" && (
-                <span className={styles.error}>La date est requise</span>
-              )}
+              <input type="date" id="date" name="date" className="form-date-input"
+                required {...register("date", {required: true})}onChange={handleChange}/>
+               <span className="date-error">{errors.date?.type === "required" && "La date est requise"}</span>
             </div>
           </div>
 
-          <div className={styles.content}>
-            <div className={styles.input}>
-              <label>Gender</label>
 
-              <div className={styles.wrapperGender}>
-                <div className={styles.wrapperIcon}>
-                  <img src={Man} className={styles.assets}></img>
-                  <div
-                    className={"btn" + (gender === "homme" ? " active " : "")}
-                    onClick={() => {
-                      setGender("homme");
-                    }}
-                  >
-                    Un Homme{" "}
-                  </div>
+           {/* Le genre */}
+          <div className="container-gender">
+        
+            <div className="section-title-gender">
+              <h2>Gender</h2>
+            </div>
+
+              <div className="section-gender">
+                <div className="gender-male-img">
+                  <img src={Man} className="male-img"></img>
+                  <button className={"gender-btn" + (gender === "homme" ? " active " : "")} onClick={() => {setGender("homme")}} >Un Homme</button>
                 </div>
 
-                <div className={styles.wrappericonImg}>
-                  <img src={Woman} className={styles.assets}></img>
-                  <div
-                    className={"btn" + (gender === "femme" ? " active " : "")}
-                    onClick={() => {
-                      setGender("femme");
-                    }}
-                  >
-                    Une Femme
-                  </div>
+                <div className="gender-woman-img">
+                  <img src={Woman} className="male-img"></img>
+                  <button className={"gender-btn" + (gender === "femme" ? " active " : "")}onClick={() => { setGender("femme")}}>Une Femme</button>
                 </div>
               </div>
-            </div>
+    
           </div>
 
-          <div className={styles.content}>
-            <div className={styles.input}>
+
+             {/* Les input pour les information */}
+
+      <div className="container-info-user">
+
+          <div className="input-champs">
+            <div className="input-champs-info">
               <label>Height(cm)</label>
-              <input
-                type="number"
-                id="number"
-                name="height"
-                required
-                {...register("height", {
-                  required: true,
-                  max: 250,
-                })}
-                onChange={handleChange}
-              />
-
-              {errors.height?.type === "required" && (
-                <span className={styles.error}>La taille est requis</span>
-              )}
+              <input type="number" id="number"name="height" required 
+              {...register("height", {required: true, max: 250,})} onChange={handleChange}/>
+            <span className="error">{errors.height?.type === "required" && ("La taille est requis")}</span>
             </div>
           </div>
 
-          <div className={styles.content}>
-            <div className={styles.input}>
+          <div className="input-champs">
+            <div className="input-champs-info">
               <label>Weight(kg)</label>
-              <input
-                type="number"
-                id="number"
-                name="weight"
-                required
-                {...register("weight", {
-                  required: true,
-                  min: 30,
-                  max: 300,
-                })}
-                onChange={handleChange}
-              />
-              {errors.weight?.type === "required" && (
-                <span className={styles.error}>Le poids est requis</span>
-              )}
+              <input type="number" id="number" name="weight" required {...register("weight", {required: true, min: 30, max: 300 })}onChange={handleChange}/>
+              {errors.weight?.type === "required" && (<span className="error">Le poids est requis</span>)}
             </div>
           </div>
 
-          <div className={styles.content}>
-            <div className={styles.input}>
+          <div className="input-champs">
+            <div className="input-champs-info">
               <label>Age</label>
-              <input
-                type="number"
-                id="number"
-                name="age"
-                placeholder="min : 15ans"
-                required
-                {...register("age", {
-                  required: true,
-                  min: 15,
-                  max: 70,
-                })}
+              <input type="number" id="number" name="age"placeholder="min : 15ans"
+                {...register("age", {required: true, min: 15, max: 70})}
                 onChange={handleChange}
               />
               {errors.age?.type === "required" && (
-                <span className={styles.error}>L'age est requis</span>
+                <span className="error">L'age est requis</span>
               )}
             </div>
           </div>
+
+          </div>
+
+
+
+
+
         </div>
 
-        <div className={styles.wrapperActivity}>
-          <div className={styles.boxActif}>
+
+
+
+        <div className={""}>
+          <div className={"styles.boxActif"}>
             <h2>Votre activité</h2>
 
-            <div className={styles.itemsActif}>
-              <div className={styles.itemsActivity}>
-                <div
-                  className={"btn" + (activity === "1" ? " active-btn " : "")}
-                  onClick={() => {
-                    setActivity("1");
-                  }}
-                >
-                  {" "}
-                  Peu actif
+            <div className={"styles.itemsActif"}>
+              <div className={"styles.itemsActivity"}>
+                <div className={"btn" + (activity === "1" ? " active-btn " : "")}onClick={() => { setActivity("1");}}>{" "} Peu actif
                 </div>
-                <p>
-                  Assis la plupart du temps{" "}
-                  <span>(par ex : travail de bureau)</span>
-                </p>
               </div>
 
-              <div className={styles.itemsActivity}>
+              <div className={"styles.itemsActivity"}>
                 <div
                   className={"btn" + (activity === "2" ? " active-btn " : "")}
                   onClick={() => {
@@ -209,30 +154,14 @@ function Entry() {
                 >
                   Moyennement actif
                 </div>
-                <p>
-                  Debout la plupart du temps{" "}
-                  <span>(par ex : professeur, caissier)</span>
-                </p>
               </div>
 
-              <div className={styles.itemsActivity}>
-                <div
-                  className={"btn" + (activity === "3" ? " active-btn " : "")}
-                  onClick={() => {
-                    setActivity("3");
-                  }}
-                >
-                  Actif
-                </div>
-                <p>
-                  Marche la plupart du temps{" "}
-                  <span>(par ex : serveur, vendeur)</span>
-                </p>
+              <div className={"styles.itemsActivity"}>
+                <div className={"btn" + (activity === "3" ? " active-btn " : "")} onClick={() => {setActivity("3");}}> Actif</div>
               </div>
 
-              <div className={styles.itemsActivity}>
-                <div
-                  className={"btn" + (activity === "4" ? " active-btn " : "")}
+              <div className={"styles.itemsActivity"}>
+                <div className={"btn" + (activity === "4" ? " active-btn " : "")}
                   onClick={() => {
                     setActivity("4");
                   }}
@@ -247,11 +176,21 @@ function Entry() {
           </div>
         </div>
 
-        <div className={styles.buttonEntry}>
+
+
+
+
+        <div className={"styles.buttonEntry"}>
           {/* <button className="button-valid" type="submit">Envoyer</button> */}
-          <input type="submit"/>
+          <input type="submit" />
         </div>
+
+
+
       </form>
+
+
+
     </div>
   );
 }
