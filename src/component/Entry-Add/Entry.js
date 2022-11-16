@@ -3,19 +3,23 @@ import { useForm } from "react-hook-form";
 import Man from "../../assets/homme.png";
 import Woman from "../../assets/femme.png";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-dom";
+import { useNavigate } from "react-router";
 import { User } from "../../App";
 import "../Entry-Add/Entry.css"
+import { AiOutlineFastBackward } from "react-icons/ai";
 
 function Entry() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const [activity, setActivity] = useState(1);
   const [gender, setGender] = useState("homme");
   const [values, setValues] = useState(null);
-  const [formValid, setFormValid] = useState(false);
   const [user, setUsers] = useState([]);
-  // const navigate = useNavigate()
+
+
+  const navigate = useNavigate()
   const context = useContext(User);
+
+
   const onSubmit = (data, event) => {
     event.preventDefault();
     console.log(data, event);
@@ -37,8 +41,8 @@ function Entry() {
       .then((reponse) => reponse.json())
       .then((res) => {
         console.log("Success:", res);
-
         setUsers(res);
+        navigate("/Progres")
       });
   };
 
@@ -50,9 +54,17 @@ function Entry() {
   return (
     <div className="container-entry">
 
+          
+        
+
       <div className="box-title">
         <h1>Entrer des nouvelles données personnelles</h1>
       </div>
+
+      <div className="icon">
+                <AiOutlineFastBackward className="icon-btn" onClick={() => navigate(-1, { replace: true })} />
+                <p onClick={() => navigate("/Progres", { replace: true })}>Retour a mes resultats</p>
+            </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="container-entry-input">
         {/* La date */}
@@ -94,7 +106,7 @@ function Entry() {
 
           <div className="container-info-user">
 
-            <div className="section-title-gender">
+            <div className="section-title-user">
               <h2>Info</h2>
             </div>
 
@@ -127,9 +139,6 @@ function Entry() {
           </div>
         </div>
 
-
-
-
         <div className="container-activity">
 
           <div className="section-title-activity">
@@ -157,11 +166,8 @@ function Entry() {
           </div>
         </div>
 
-
-
-        <div className={"styles.buttonEntry"}>
-          {/* <button className="button-valid" type="submit">Envoyer</button> */}
-          <input type="submit" />
+        <div className="buttonEntry">
+          <button className="button-valid" type="submit">Envoyer</button>
         </div>
 
       </form>

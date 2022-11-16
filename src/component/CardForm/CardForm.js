@@ -3,8 +3,10 @@ import "./CardForm.css"
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router'
 import { useContext } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { User } from '../../App'
+import { AiOutlineFastBackward } from "react-icons/ai";
+
 
 
 function CardForm({ id, room, setRoom, refresh }) {
@@ -46,7 +48,7 @@ function CardForm({ id, room, setRoom, refresh }) {
                 }
                 return res
             })
-        
+
         // .then((res) => res.json())
         // .then((data) => setRoom(values))
         // .catch((error) => console.log(error))
@@ -86,7 +88,7 @@ function CardForm({ id, room, setRoom, refresh }) {
                                 <p>{room.totalCalories}</p>
                             </div>
                             <p className="card_name">Total Calories</p>
-                           <Link to="/BMI"><button className="btn-draw-border">EN SAVOIR PLUS</button></Link>
+                            <Link to="/BMI"><button className="btn-draw-border">EN SAVOIR PLUS</button></Link>
                         </div>
                     </div>
 
@@ -97,7 +99,7 @@ function CardForm({ id, room, setRoom, refresh }) {
                                 <p>{room.bmi}</p>
                             </div>
                             <p className="card_name">BMI</p>
-                            <Link to={`/BMI/${room.bmi}`}><button className="btn-draw-border">EN SAVOIR PLUS</button></Link> 
+                            <Link to={`/BMI/${room.bmi}`}><button className="btn-draw-border">EN SAVOIR PLUS</button></Link>
                         </div>
                     </div>
 

@@ -8,7 +8,7 @@
   width: 85%;
   font-size: 16px;
   background: #F5F5F5;
-  height: 200vh;
+  height: 210vh;
 }
 
 .date-error {
@@ -36,6 +36,7 @@
   border-radius: 20px;
   text-align: center;
   margin-bottom: 50px;
+  font-size: 24px;
 }
 
 
@@ -86,7 +87,7 @@
 
 .section-title-gender {
   text-align: center;
-  margin-top: 3rem;
+  margin-bottom: 2em;
 }
 
 .section-gender {
@@ -111,12 +112,12 @@
 }
 
 .active {
-  background-color: #190c8d !important;
+  background-color: #FFDD00 !important;
 }
 
 .gender-btn {
-  background-color: gray;
-  color: #ffffff;
+  background-color: rgb(169, 168, 168);
+  color: black;
   font-size: 1em;
   font-weight: 600;
   border-radius: 50px;
@@ -170,8 +171,8 @@
 /* CSS Activity*/
 
 .container-activity {
-  margin-top: 40px;
-  background-color: beige;
+  margin-top: 50px;
+  background: #fafafa;
 }
 
 .section-title-activity {
@@ -195,8 +196,8 @@
 }
 
 .btn-actif {
-  background-color: gray;
-  color: #ffffff;
+  background-color:rgb(169, 168, 168);
+  color: black;
   font-size: 14px;
   font-weight: 600;
   border-radius: 30px;
@@ -207,10 +208,128 @@
 }
 
 .active-btn {
-  background-color: #190c8d !important;
+  background-color: #FFDD00 !important;
 }  
 
 
+/* Button submit */
 
-/* 
-@media (max-width : 600px){} */
+
+.buttonEntry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.button-valid {
+  background-color: #FFDD00;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  height: 3em;
+  width: 120px;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width : 700px){
+  .container-entry {
+    height: auto;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    background: #F5F5F5;
+    height: 200vh;
+  }
+
+  .box-title {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  /* Gender mobile */
+
+  .section-title-gender {
+    font-size: 16px;
+    margin-bottom: 1.6em;
+  }
+  
+  .section-gender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gender-male-img {
+    margin-right: 2.5rem;
+  }
+  
+  .gender-woman-img {
+    margin-left: 2.5rem;
+  }
+  
+  .male-img {
+    width: 70px;
+    height: 70px;
+    padding-left: 5px;
+  }
+  
+
+  .gender-btn {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    height: 2.4em;
+    border: none;
+  }
+
+  /* info user mobile */
+
+  
+  .input-champs {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    width: 75%;
+    text-align: center;
+    background: #fafafa;
+  }
+  
+  .input-champs-info h3 {
+    font-size: 15px;
+  }
+  
+  
+  .input-info {
+    line-height: 15px;
+    padding: 4px 12px;
+  }
+  
+/* activity mobile */
+
+  .section-activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-actif {
+    width: 100px;
+    height: 2.4em;
+    font-size: 0.8em;
+  }
+
+  .btn-activity {
+    margin: 10px;
+    padding: 0;
+  }
+} 

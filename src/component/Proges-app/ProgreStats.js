@@ -1,7 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router'
-import CardProgres from '../CardProgres/CardProgres'
 import CardForm from '../CardForm/CardForm'
 
 function ProgreStats() {
@@ -22,10 +21,7 @@ function ProgreStats() {
  }
   return room ? (
     <div>
-      {/* <h1>ProgresStats</h1>
-      <CardProgres room={room}/> */}
       <h2 style={{textAlign : "center", marginTop : "10px"}}>Editer info deja valider</h2>
-      
       <CardForm id={id} room={room} setRoom={setRoom} refresh={fetchData}/>
     </div>
   ) : <p>Error sur la page</p>
