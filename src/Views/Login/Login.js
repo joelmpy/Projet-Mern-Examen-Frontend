@@ -51,13 +51,13 @@ function Login() {
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="form-horizontal">
 
-        <input {...register('email', { required: true, maxLength: 30 })} placeholder="email" onChange={handleChange} />
+        <input {...register('email', { required: true, maxLength: 30 })} type="email" placeholder="email" onChange={handleChange} />
               <span> {errors.email?.type ==='required' && "Entrez votre nom d'utilisateur"} </span>
               <span> {errors.email?.type ==='maxLength' && "Attention! 15 caractère max"} </span>
     
-              <input {...register('password', { required: true, minLength: 6 })} placeholder="Password" onChange={handleChange} />
-              <span className=''> {errors.Password?.type ==='required' && "Entrez votre mot de passe"} </span>
-              <span> {errors.Password?.type ==='minLength' && "Entrez 6 caractère min."} </span>
+              <input {...register('password', { required: true, minLength: 6 })} type="password" placeholder="Password" onChange={handleChange} />
+              <span className=''> {errors.password?.type ==='required' && "Entrez votre mot de passe"} </span>
+              <span> {errors.password?.type ==='minLength' && "Entrez 6 caractère min."} </span>
     
           <div className='button-submit'>
           <button type="submit" className="bouton-ok">Se Connecter</button>

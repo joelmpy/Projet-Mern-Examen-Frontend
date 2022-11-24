@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { User } from '../../App'
-import { AiOutlineFastBackward } from "react-icons/ai";
+
 
 
 
@@ -125,7 +125,7 @@ function CardForm({ id, room, setRoom, refresh }) {
                 </div>
                 <div className='button_save'>
                     <button className="btn-change" style={{ backgroundColor: "red" }} onClick={handleDelte}>Supprimer</button>
-                    <button type="submit" style={{ backgroundColor: "blue" }} onClick={onFinsih} className='btn-change'>Submit</button>
+                    <button type="submit" style={{ backgroundColor: "blue" }} onClick={onFinsih} className='btn-change'>Confirmer</button>
                 </div>
 
 

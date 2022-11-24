@@ -77,14 +77,14 @@ function Bmi() {
     return (
 
         <div className='container-imc'>
+                      <div className="icon">
+                <AiOutlineFastBackward className="icon-btn" onClick={() => navigate(-1, { replace: true })} />
+                <p onClick={() => navigate(-1, { replace: true })}>Retour a mes resultats</p>
+            </div>
             <div className="title-imc">
                 <h1 className="section-imc">Le « BMI » (Body Mass Index)</h1>
             </div>
           
-            <div className="icon">
-                <AiOutlineFastBackward className="icon-btn" onClick={() => navigate(-1, { replace: true })} />
-                <p onClick={() => navigate(-1, { replace: true })}>Retour a mes resultats</p>
-            </div>
 
             <div className="section-history">
                 <p>Pour déterminer si quelqu'un a un poids trop élevé ou, au contraire, est trop maigre, on utilise le plus souvent la mesure du « BMI » (Body Mass Index). En français, on parle d'Indice de Masse Corporelle (IMC) ou encore d'indice de Quetelet (du nom du Belge, mathématicien, statisticien, sociologue et astronome, qui l'a mis au point). Le calcul consiste à diviser le poids par la taille au carré (kg/m²). </p>

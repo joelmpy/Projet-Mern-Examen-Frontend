@@ -30,7 +30,7 @@ function Entry() {
       },
       method: "POST",
       body: JSON.stringify({
-        gender: gender,
+        gender: gender,   
         activity: activity,
         age: parseInt(data.age),
         weight: parseInt(data.weight),
@@ -42,7 +42,7 @@ function Entry() {
       .then((res) => {
         console.log("Success:", res);
         setUsers(res);
-        navigate("/Progres")
+        navigate(`/Progres/${res.result._id}`)
       });
   };
 
@@ -63,7 +63,7 @@ function Entry() {
 
       <div className="icon">
                 <AiOutlineFastBackward className="icon-btn" onClick={() => navigate(-1, { replace: true })} />
-                <p onClick={() => navigate("/Progres", { replace: true })}>Retour a mes resultats</p>
+                <p onClick={() => navigate(-1, { replace: true })}>Retour a mes resultats</p>
             </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="container-entry-input">
@@ -148,19 +148,19 @@ function Entry() {
           <div className="section-activity">
 
             <div className="btn-activity">
-              <button className={"btn-actif" + (activity === "1" ? " active-btn " : "")} onClick={() => { setActivity("1"); }}>{" "} Peu actif</button>
+              <button className={"btn-actif" + (activity === "1" ? " active-btn " : "")} type='button' onClick={() => { setActivity("1"); }}>{" "} Peu actif</button>
             </div>
 
             <div className="btn-activity">
-              <button className={"btn-actif" + (activity === "2" ? " active-btn " : "")} onClick={() => { setActivity("2") }}>Moyennement actif</button>
+              <button className={"btn-actif" + (activity === "2" ? " active-btn " : "")}  type='button' onClick={() => { setActivity("2") }}>Moyennement actif</button>
             </div>
 
             <div className="btn-activity">
-              <button className={"btn-actif" + (activity === "3" ? " active-btn " : "")} onClick={() => { setActivity("3"); }}> Actif</button>
+              <button className={"btn-actif" + (activity === "3" ? " active-btn " : "")}  type='button' onClick={() => { setActivity("3"); }}> Actif</button>
             </div>
 
             <div className="btn-activity">
-              <button className={"btn-actif" + (activity === "4" ? " active-btn " : "")} onClick={() => { setActivity("4"); }}> Très actif </button>
+              <button className={"btn-actif" + (activity === "4" ? " active-btn " : "")}  type='button'  onClick={() => { setActivity("4"); }}> Très actif </button>
             </div>
 
           </div>

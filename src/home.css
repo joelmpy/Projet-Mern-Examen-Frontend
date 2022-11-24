@@ -19,11 +19,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 20px;
-    height: 59vh;
+    height: 60vh;
 }
 
 .banner-view p {
+    color: var(--sidebar-main-color);
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.banner-view span {
+    margin-top: 5px;
     color: var(--sidebar-main-color);
     font-size: 30px;
     font-weight: 600;
@@ -56,7 +65,12 @@
 
 .bloc-left h2 {
     text-align: center;
-    font-size: 2.7vw;
+    font-size: 2.4vw;
+}
+.bloc-left p  {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 .bloc-right h2 {
@@ -102,6 +116,10 @@
 
     .bloc-left h2 {
         font-size: 1.2em;
+    }
+    .bloc-left p  {
+        font-size: 1.2em;
+        font-weight: bold;
     }
 
     .bloc-right h2 {

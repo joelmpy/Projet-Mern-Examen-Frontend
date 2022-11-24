@@ -14,10 +14,23 @@ const HCLayout = () => {
     const context = useContext(User)
     const [mobile, setMobile] = useState(false)
 
+    const logout = async ()=>{
+        const request = await fetch('http://localhost:8009/disconnect', {      headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },    
+            method:"POST"
+
+        })
+        const datajson = await request.json()
+        console.log(datajson)
+        context.setAuth(false, {})
+    }
     return (
-
-
-
+        <>
+        <button className='mobile-menu-icon' onClick={() => setMobile(!mobile)}>
+            {mobile ? <ImCross color={"white"} /> : <FaBars color={"white"}/>}
+        </button>
         <nav className="navBar">
 
             <div className="logo">
@@ -26,10 +39,11 @@ const HCLayout = () => {
 
 
             <ul className={mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
-                <Link to="/"><li>Home</li></Link>
+                <Link to="/"><li>Accueil</li></Link>
                 <Link to='/Progres'> <li>Données</li></Link>
                 <Link to='/Ajouter'><li>Ajouter</li></Link>
                 <Link to='/Contact'><li>Contact</li></Link>
+                <li onClick={logout} style={{color:' red '}}>Déconnexion</li>
             </ul>
 
             <div className="account-info">
@@ -38,12 +52,8 @@ const HCLayout = () => {
                 </div>
                 <div className="account-info-name">{context.user.firstname} {context.user.surname}</div>
             </div>
-
-            <button className='mobile-menu-icon' onClick={() => setMobile(!mobile)}>
-                {mobile ? <ImCross /> : <FaBars />}
-            </button>
-
         </nav>
+        </>
 
 
     )

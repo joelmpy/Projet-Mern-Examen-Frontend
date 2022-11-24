@@ -1,12 +1,11 @@
 import React from "react";
 import moment from "moment";
 import "./CradProgres.css";
-import { VscAdd } from "react-icons/vsc";
-import {useNavigate} from 'react-router'
+
 
 function CardProgres({ room }) {
 
-  const navigate = useNavigate()
+
   const getDate = (date) => {
     return moment(date).format("DD/MM/YYYY");
   };
@@ -20,9 +19,6 @@ function CardProgres({ room }) {
         <div class="product-cell sales">{room.height}</div>
         <div class="product-cell stock">{room.weight}</div>
       </div>
-      <div className="icon-progres">
-                <VscAdd className="icon-progres" onClick={() => navigate("/Ajouter", { replace: true })} />
-         </div>
       </>
 
 

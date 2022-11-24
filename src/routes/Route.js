@@ -12,6 +12,7 @@ import Footer from '../component/Footer/Footer'
 import Login from "../Views/Login/Login"
 import Bmi from '../component/Bmi-info/Bmi'
 import NavBar from '../component/Navbar/Navbar'
+import Confirmed from '../component/Confirmed'
 import { User } from "../App"
 import Signup from '../Views/Signup/Signup'
 
@@ -27,14 +28,25 @@ function Routeur() {
                 context.Log ? <Layout/> : <NavBar/>
             }
             <Routes>
+                {
+                    context.Log?
+                <>
                 <Route path="/" element={<Home />}></Route>
-                <Route path='/login' element={<Login/>}></Route>
-                <Route path='/signup' element={<Signup/>}></Route>
                 <Route path="Progres/*" element={<Homepage />}></Route>
                 <Route path="/Ajouter" element={<Entry />}></Route>
                 <Route path="Contact" element={<Contact />}></Route>
                 <Route path='BMI/:bmi' element={<Bmi/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
+                </>
+                :
+                <>
+                <Route path="/" element={<Home />}></Route>
+                <Route path='/login' element={<Login/>}></Route>
+                <Route path='/signup' element={<Signup/>}></Route>
+                <Route path='/confirmed' element={<Confirmed/>}></Route>
+                <Route path="*" element={<Login/>}></Route>
+                </>
+            }
             </Routes>
             <Footer/>      
         </div>

@@ -21,7 +21,7 @@ function ProgreStats() {
  }
   return room ? (
     <div>
-      <h2 style={{textAlign : "center", marginTop : "10px"}}>Editer info deja valider</h2>
+      <h2 style={{textAlign : "center", marginTop : "10px"}}>Editer informations déjà validées</h2>
       <CardForm id={id} room={room} setRoom={setRoom} refresh={fetchData}/>
     </div>
   ) : <p>Error sur la page</p>
